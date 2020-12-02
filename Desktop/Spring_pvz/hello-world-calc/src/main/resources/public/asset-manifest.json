@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/hello-world-calc/static/css/main.435d5fe5.chunk.css",
+    "main.js": "/hello-world-calc/static/js/main.36c1fe0e.chunk.js",
+    "main.js.map": "/hello-world-calc/static/js/main.36c1fe0e.chunk.js.map",
+    "runtime-main.js": "/hello-world-calc/static/js/runtime-main.ef7822fd.js",
+    "runtime-main.js.map": "/hello-world-calc/static/js/runtime-main.ef7822fd.js.map",
+    "static/js/2.a8174914.chunk.js": "/hello-world-calc/static/js/2.a8174914.chunk.js",
+    "static/js/2.a8174914.chunk.js.map": "/hello-world-calc/static/js/2.a8174914.chunk.js.map",
+    "static/js/3.cb9a2790.chunk.js": "/hello-world-calc/static/js/3.cb9a2790.chunk.js",
+    "static/js/3.cb9a2790.chunk.js.map": "/hello-world-calc/static/js/3.cb9a2790.chunk.js.map",
+    "index.html": "/hello-world-calc/index.html",
+    "precache-manifest.9406a2fcb348843e1789a5626f4df0e8.js": "/hello-world-calc/precache-manifest.9406a2fcb348843e1789a5626f4df0e8.js",
+    "service-worker.js": "/hello-world-calc/service-worker.js",
+    "static/css/main.435d5fe5.chunk.css.map": "/hello-world-calc/static/css/main.435d5fe5.chunk.css.map",
+    "static/js/2.a8174914.chunk.js.LICENSE.txt": "/hello-world-calc/static/js/2.a8174914.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/hello-world-calc/static/media/logo.06e73328.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ef7822fd.js",
+    "static/js/2.a8174914.chunk.js",
+    "static/css/main.435d5fe5.chunk.css",
+    "static/js/main.36c1fe0e.chunk.js"
+  ]
+}
