@@ -8,17 +8,19 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.IntegrationTest;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
+//import org.springframework.boot.test.IntegrationTest;
+//import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
+//import org.springframework.test.context.web.WebAppConfiguration;
 
 import com.jayway.restassured.RestAssured;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = App.class)
-@WebAppConfiguration
-@IntegrationTest({ "server.port:0", "spring.datasource.url:jdbc:h2:mem:hello-world-calc;DB_CLOSE_ON_EXIT=FALSE" })
+//@SpringApplicationConfiguration(classes = App.class)
+//@WebAppConfiguration
+//@IntegrationTest({ "server.port:0", "spring.datasource.url:jdbc:h2:mem:hello-world-calc;DB_CLOSE_ON_EXIT=FALSE" })
+@SpringBootTest(classes = App.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class HelloControllerTest {
 	@Value("${local.server.port}")
 	int port;

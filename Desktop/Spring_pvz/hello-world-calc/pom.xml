@@ -11,11 +11,11 @@
 
 	<name>Spring Boot Blank Project (from https://github.com/making/spring-boot-blank)</name>
 
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.2.7.RELEASE</version>
-	</parent>
+<parent>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-parent</artifactId>
+	<version>2.4.0</version>
+</parent>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -76,7 +76,23 @@
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.integralblue</groupId>
+			<artifactId>log4jdbc-spring-boot-starter</artifactId>
+			<version>1.0.2</version>
+		</dependency>
 
+		<dependency>
+			<groupId>org.junit.vintage</groupId>
+			<artifactId>junit-vintage-engine</artifactId>
+			<scope>test</scope>
+			<exclusions>
+			<exclusion>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-core</artifactId>
+			</exclusion>
+			</exclusions>
+			</dependency>
 	</dependencies>
 	<build>
 		<plugins>

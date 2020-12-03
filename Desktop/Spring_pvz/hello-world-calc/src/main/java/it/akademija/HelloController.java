@@ -21,9 +21,29 @@ public class HelloController {
 
 	@Data
 	static class Result {
+
 		private final int left;
 		private final int right;
 		private final long answer;
+
+		public Result(int left2, int right2, long long1) {
+			this.left = left2;
+			this.right = right2;
+			this.answer = long1;
+		}
+
+		public int getLeft() {
+			return left;
+		}
+
+		public int getRight() {
+			return right;
+		}
+
+		public long getAnswer() {
+			return answer;
+		}
+
 	}
 
 	// SQL sample
