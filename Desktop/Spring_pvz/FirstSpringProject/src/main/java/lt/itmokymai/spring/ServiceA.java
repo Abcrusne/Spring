@@ -2,16 +2,26 @@ package lt.itmokymai.spring;
 
 public class ServiceA {
 
-	String resultA;
-
-	public ServiceA() {
-
-		System.out.println("Inside ServiceA constructor.");
-	}
+	private String message = "labas";
 
 	public String getResult() {
+		return getMessage();
+	}
 
-		return resultA;
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public void init() {
+		System.out.println("Bean is going through init.");
+	}
+
+	public void destroy() {
+		System.out.println("Bean will destroy now.");
 	}
 
 }

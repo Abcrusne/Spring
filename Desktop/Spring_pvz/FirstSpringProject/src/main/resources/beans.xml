@@ -5,24 +5,27 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-<bean id="helloWorld" class="lt.itmokymai.spring.HelloWorld"
+
+
+<bean id="serviceABean" class="lt.itmokymai.spring.ServiceA"
  init-method = "init" destroy-method = "destroy">
-<property name="message" value="Hello World!" />
+ <!--  <property name="message" value="Service A message" /> -->
 </bean>
- <bean class = "lt.itmokymai.spring.InitHelloWorld" />
+ <bean class = "lt.itmokymai.spring.InitDestServiceA" />
  
- <bean id="serviceBBean" class="lt.itmokymai.spring.ServiceB">
-<property name="serviceA" ref="serviceABean" />
-
+ 
+ <bean id="serviceBBean" class="lt.itmokymai.spring.ServiceB" autowire="byName">
+	 <constructor-arg ref="serviceABean" /> 
 </bean>
-<bean id="serviceABean" class="lt.itmokymai.spring.ServiceA">
+ 
+ <!--   <bean id="productsBean" class="lt.itmokymai.spring.Products">
+ </bean> -->
+ 
+  <bean id = "serviceCBean" class ="lt.itmokymai.spring.ServiceC"
+	parent= "serviceABean">
+		<!--  <property name ="message" value="Service A messg"/> -->
 
-</bean>
-
-<bean id = "serviceCBean" class ="lt.itmokymai.spring.ServiceC"
-parent= "serviceABean">
-
-<property name="lists">
+	<property name="lists">
 		<list>
 			<value>1</value>
 			<ref bean="productsBean" />
@@ -34,6 +37,7 @@ parent= "serviceABean">
 				<property name="quantity" value="111" />
 			</bean>
 		</list>
-	</property>
+	</property>  
+	
 </bean>
 </beans>

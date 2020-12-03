@@ -1,11 +1,19 @@
 package lt.itmokymai.spring;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Products {
+
 	String title;
 	String image;
 	String desc;
 	double price;
 	int quantity;
+
+	public Products() {
+
+	}
 
 	public String getTitle() {
 		return title;
@@ -45,6 +53,12 @@ public class Products {
 
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+
+	@Override
+	public String toString() {
+		return "Products [title=" + title + ", image=" + image + ", desc=" + desc + ", price=" + price + ", quantity="
+				+ quantity + "]";
 	}
 
 }

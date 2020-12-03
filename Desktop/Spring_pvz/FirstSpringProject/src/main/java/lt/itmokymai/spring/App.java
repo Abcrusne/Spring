@@ -19,18 +19,19 @@ public class App {
 
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 
-		HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
+		ServiceA obj = (ServiceA) context.getBean("serviceABean");
+		obj.getResult();
 		obj.getMessage();
 		context.registerShutdownHook();
 
-//		ServiceB b = (ServiceB) context.getBean("serviceBBean");
-//		System.out.println(b.getResult());
+		ServiceB b = (ServiceB) context.getBean("serviceBBean");
+		System.out.println(b.getResult());
 
 //		ServiceA a = (ServiceA) context.getBean("serviceCBean");
 //		System.out.println(a.getResult());
-//		ServiceC c = (ServiceC) context.getBean("serviceCBean");
-//		System.out.println(c.getResult());
-//		System.out.println(getTitle(c.getLists()));
+		ServiceC c = (ServiceC) context.getBean("serviceCBean");
+		System.out.println(c.getResult());
+		System.out.println(getTitle(c.getLists()));
 
 	}
 
