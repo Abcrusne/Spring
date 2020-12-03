@@ -12,26 +12,6 @@ public class ServiceC extends ServiceA {
 
 	private List<Products> lists = new ArrayList<Products>();
 
-//	public ServiceC(String message, List<Products> lists) {
-//		super();
-//		this.message = message;
-//		this.lists = lists;
-//	}
-//
-//	public ServiceC() {
-//		super();
-//	}
-//
-//	public ServiceC(String message) {
-//		super();
-//		this.message = message;
-//	}
-//
-//	public ServiceC(List<Products> lists) {
-//		super();
-//		this.lists = lists;
-//	}
-
 	public String getResult() {
 		return "ServiceC result:" + getMessage();
 	}
@@ -51,6 +31,12 @@ public class ServiceC extends ServiceA {
 
 	public void setLists(List<Products> lists) {
 		this.lists = lists;
+	}
+
+	public void getProductTitle() {
+		for (Products product : lists) {
+			System.out.println(product.getTitle());
+		}
 	}
 
 }

@@ -1,5 +1,9 @@
 package lt.itmokymai.spring;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class ServiceA {
 
 	private String message = "labas";
@@ -12,6 +16,7 @@ public class ServiceA {
 		return message;
 	}
 
+	@Autowired
 	public void setMessage(String message) {
 		this.message = message;
 	}

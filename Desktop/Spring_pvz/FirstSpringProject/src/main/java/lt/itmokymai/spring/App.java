@@ -1,8 +1,5 @@
 package lt.itmokymai.spring;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -31,11 +28,12 @@ public class App {
 //		System.out.println(a.getResult());
 		ServiceC c = (ServiceC) context.getBean("serviceCBean");
 		System.out.println(c.getResult());
-		System.out.println(getTitle(c.getLists()));
+		// System.out.println(getTitle(c.getLists()));
+		c.getProductTitle();
 
 	}
 
-	public static List<String> getTitle(List<Products> lists) {
-		return lists.stream().map(product -> product.getTitle()).collect(Collectors.toList());
-	}
+//	public static List<String> getTitle(List<Products> lists) {
+//		return lists.stream().map(product -> product.getTitle()).collect(Collectors.toList());
+//	}
 }

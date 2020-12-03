@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Products {
 
+	String id;
 	String title;
 	String image;
 	String desc;
@@ -13,6 +14,14 @@ public class Products {
 
 	public Products() {
 
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getTitle() {

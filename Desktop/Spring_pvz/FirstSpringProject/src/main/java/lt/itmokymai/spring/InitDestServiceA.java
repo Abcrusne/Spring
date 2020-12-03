@@ -24,9 +24,4 @@ public class InitDestServiceA implements BeanPostProcessor, DestructionAwareBean
 
 	}
 
-	@Override
-	public boolean requiresDestruction(Object bean) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 }
