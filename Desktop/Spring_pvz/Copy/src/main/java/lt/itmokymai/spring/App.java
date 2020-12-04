@@ -16,13 +16,13 @@ public class App {
 
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 //
-		ServiceA obj = (ServiceA) context.getBean("serviceABean");
-		System.out.println(obj.getResult());
-		obj.getMessage();
-		context.registerShutdownHook();
+//		ServiceA obj = (ServiceA) context.getBean("serviceABean");
+//		System.out.println(obj.getResult());
+//		obj.getMessage();
+//		context.registerShutdownHook();
 //
-		ServiceB b = (ServiceB) context.getBean("serviceBBean");
-		System.out.println(b.getResult());
+		ServiceB b = (ServiceB) context.getBean("serviceB");
+		System.out.println(b.getMessage());
 
 //		ServiceA a = (ServiceA) context.getBean("serviceCBean");
 //		System.out.println(a.getResult());

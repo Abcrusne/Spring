@@ -6,18 +6,25 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-3.0.xsd">
-<context:annotation-config/>
-<!-- bean definitions go here -->
 
 
-<bean id="serviceBBean" class="lt.itmokymai.spring.ServiceB" autowire="byName" >  <!--  autowire="byName" -->
-	<!--<property name="message" value="Service B message" /> -->
-	<!-- <constructor-arg ref="serviceABean" />  --> 
-</bean>
-<bean id="serviceABean" class="lt.itmokymai.spring.ServiceA" >
-  <!-- init-method = "init" destroy-method = "destroy" > -->
-  <!-- <property name="message" value="Service A message" />  -->
+<context:component-scan base-package="lt.itmokymai.spring"/>
+
+<!--<context:annotation-config/> -->
+
+<!--  <bean id="serviceB" class="lt.itmokymai.spring.ServiceB"  >  -->
+<!--  autowire="byName" -->
+  
+	<!--<property name="message" value="Service B message" />   
+	
+	</bean>-->
+
+  
+<!--
+<bean id="serviceA" class="lt.itmokymai.spring.ServiceA" >
+ init-method = "init" destroy-method = "destroy" >
+ <property name="message" value="Service A message" /> 
 </bean>
  
-
+-->
 </beans>
