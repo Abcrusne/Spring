@@ -16,25 +16,23 @@ public class App {
 
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 //
-		ServiceA obj = (ServiceA) context.getBean("serviceABean");
-		System.out.println(obj.getResult());
-		obj.getMessage();
+		ServiceA a = (ServiceA) context.getBean("serviceA");
+		System.out.println(a.getResult());
+		a.getMessage();
 		context.registerShutdownHook();
 //
-		ServiceB b = (ServiceB) context.getBean("serviceBBean");
-		System.out.println(b.getResult());
+//		ServiceB b = (ServiceB) context.getBean("serviceB");
+//		System.out.println(b.getResult());
 
-//		ServiceA a = (ServiceA) context.getBean("serviceCBean");
+//		ServiceA a = (ServiceA) context.getBean("serviceC");
 //		System.out.println(a.getResult());
-		// Products p = (Products) context.getBean("productsBean");
-//		ServiceC c = (ServiceC) context.getBean("serviceCBean");
+		// Product p = (Product) context.getBean("product");
+		ServiceC c = (ServiceC) context.getBean("serviceC");
+		c.kvieciuSpausdintuva();
+		// c.printBeanList();
 //		System.out.println(c.getResult());
 		// System.out.println(getTitle(c.getLists()));
 		// c.getProductTitle();
 
 	}
-
-//	public static List<String> getTitle(List<Products> lists) {
-//		return lists.stream().map(product -> product.getTitle()).collect(Collectors.toList());
-//	}
 }

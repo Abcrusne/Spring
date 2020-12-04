@@ -1,9 +1,6 @@
 package lt.itmokymai.spring;
 
-import org.springframework.stereotype.Component;
-
-@Component
-public class Products {
+public class Product {
 
 	String id;
 	String title;
@@ -12,8 +9,18 @@ public class Products {
 	double price;
 	int quantity;
 
-	public Products() {
+	public Product() {
 
+	}
+
+	public Product(String id, String title, String image, String desc, double price, int quantity) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.image = image;
+		this.desc = desc;
+		this.price = price;
+		this.quantity = quantity;
 	}
 
 	public String getId() {
@@ -66,8 +73,18 @@ public class Products {
 
 	@Override
 	public String toString() {
-		return "Products [title=" + title + ", image=" + image + ", desc=" + desc + ", price=" + price + ", quantity="
-				+ quantity + "]";
+		return "Products [id=" + id + ", title=" + title + ", image=" + image + ", desc=" + desc + ", price=" + price
+				+ ", quantity=" + quantity + "]";
 	}
+//
+//	@PostConstruct
+//	public void init() {
+//		System.out.println("Bean  is going through init.");
+//	}
+//
+//	@PreDestroy
+//	public void destroy() {
+//		System.out.println("Bean  will destroy now.");
+//	}
 
 }

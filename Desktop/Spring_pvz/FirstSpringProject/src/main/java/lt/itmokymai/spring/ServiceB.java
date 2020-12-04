@@ -1,8 +1,9 @@
 package lt.itmokymai.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class ServiceB {
 	private ServiceA serviceA;
 
@@ -18,6 +19,7 @@ public class ServiceB {
 //	 <bean id="serviceBBean" class="lt.itmokymai.spring.ServiceB">
 //	 <property name="serviceA" ref="serviceABean" />
 
+	// uzdejus cia Autowired ir serviceA ir ServiceB result yra labas
 	@Autowired
 	public void setServiceA(ServiceA serviceA) {
 		System.out.println("Inside setServiceA. ");
