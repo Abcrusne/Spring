@@ -15,21 +15,22 @@ public class App {
 // System.out.println( "Hello World!" );
 
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-
+//
 		ServiceA obj = (ServiceA) context.getBean("serviceABean");
-		obj.getResult();
+		System.out.println(obj.getResult());
 		obj.getMessage();
 		context.registerShutdownHook();
-
+//
 		ServiceB b = (ServiceB) context.getBean("serviceBBean");
 		System.out.println(b.getResult());
 
 //		ServiceA a = (ServiceA) context.getBean("serviceCBean");
 //		System.out.println(a.getResult());
-		ServiceC c = (ServiceC) context.getBean("serviceCBean");
-		System.out.println(c.getResult());
+		// Products p = (Products) context.getBean("productsBean");
+//		ServiceC c = (ServiceC) context.getBean("serviceCBean");
+//		System.out.println(c.getResult());
 		// System.out.println(getTitle(c.getLists()));
-		c.getProductTitle();
+		// c.getProductTitle();
 
 	}
 

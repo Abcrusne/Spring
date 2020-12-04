@@ -3,6 +3,7 @@ package lt.itmokymai.spring;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -29,14 +30,17 @@ public class ServiceC extends ServiceA {
 		return lists;
 	}
 
+	@Autowired
 	public void setLists(List<Products> lists) {
 		this.lists = lists;
 	}
 
 	public void getProductTitle() {
-		for (Products product : lists) {
-			System.out.println(product.getTitle());
-		}
+		lists.stream().map(product -> product.getTitle()).forEach(System.out::println);
+//		for (Products product : lists) {
+//			System.out.println(product.getTitle());
+//
+//		}
 	}
 
 }

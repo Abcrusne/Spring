@@ -1,22 +1,20 @@
 package lt.itmokymai.spring;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-@Component
+//@Component
 public class ServiceA {
 
 	private String message = "labas";
 
 	public String getResult() {
-		return getMessage();
+		return "ServiceA result: " + getMessage();
 	}
 
 	public String getMessage() {
+
 		return message;
 	}
 
-	@Autowired
+//	@Autowired
 	public void setMessage(String message) {
 		this.message = message;
 	}
