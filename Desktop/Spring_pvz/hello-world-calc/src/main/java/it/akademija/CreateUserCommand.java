@@ -1,22 +1,18 @@
 package it.akademija;
 
-import javax.validation.constraints.NotNull;
-
-import org.hibernate.validator.constraints.Length;
-
 public final class CreateUserCommand {
 
-	@NotNull
-	@Length(min = 1, max = 30)
+//	@NotNull
+//	@Length(min = 1, max = 30)
 	private String username;
-	@NotNull
-	@Length(min = 1, max = 100)
+//	@NotNull
+//	@Length(min = 1, max = 100)
 	private String firstName;
-	@NotNull
-	@Length(min = 1, max = 100)
+//	@NotNull
+//	@Length(min = 1, max = 100)
 	private String lastName;
-	@NotNull
-	@Length(min = 1, max = 200)
+//	@NotNull
+//	@Length(min = 1, max = 200)
 	private String email;
 
 // toliau - get ir set metodai

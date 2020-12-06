@@ -1,18 +1,18 @@
 package it.akademija;
 
 public class CreateProductCommand {
-	String id;
-	String title;
-	String image;
-	String desc;
-	double price;
-	int quantity;
+	private Integer id;
+	private String title;
+	private String image;
+	private String desc;
+	private double price;
+	private int quantity;
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

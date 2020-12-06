@@ -1,7 +1,6 @@
 package it.akademija;
 
 import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 import javax.validation.Valid;
 
@@ -20,14 +19,12 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 
 @RestController
-@Api(value = "user")
-@RequestMapping(value = "/api/users")
+@Api(value = "product")
+@RequestMapping(value = "/api/products")
 @ControllerAdvice
 public class ProductController {
 
-	@Autowired
 	private final ProductDao productDao;
-	private final List<Product> products = new CopyOnWriteArrayList<>();
 
 	@Autowired
 	public ProductController(ProductDao productDao) {
@@ -44,15 +41,16 @@ public class ProductController {
 	@ResponseStatus(HttpStatus.CREATED)
 	@ApiOperation(value = "Create product", notes = "Creates products with data")
 	public void createProduct(
-			@ApiParam(value = "User Data", required = true) @Valid @RequestBody final CreateProductCommand cpd) {
-
-		// productDao.createProduct(cpd);
+			@ApiParam(value = "Product Data", required = true) @Valid @RequestBody final CreateProductCommand cpd) {
+		Product product = new Product(cpd.getId(), cpd.getTitle(), cpd.getImage(), cpd.getDesc(), cpd.getPrice(),
+				cpd.getQuantity());
+		productDao.createProduct(product);
 		System.out.println("Created product wit ID: " + cpd.getId());
 	}
 
 	@RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void deleteUser(@PathVariable final String id) {
+	public void deleteProduct(@PathVariable final String id) {
 		productDao.deleteProduct(id);
 		System.out.println("Deleting product: " + id);
 	}

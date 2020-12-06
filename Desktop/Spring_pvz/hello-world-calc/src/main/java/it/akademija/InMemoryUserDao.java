@@ -4,7 +4,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import org.apache.catalina.User;
 import org.springframework.stereotype.Repository;
 
 @Repository
