@@ -1,26 +1,29 @@
 package it.akademija;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
+
+import it.akademija.model.Product;
 
 @ImportResource({ "classpath*:application-context.xml" })
 @Configuration
 public class AppConfig {
 
-//	@Bean
-//	public Product getProduct1() {
-//		return new Product(1, "stalas", "image", "desc", 23.5, 100);
-//	}
-//
-//	@Bean
-//	public Product getProduct2() {
-//		return new Product(1, "lempa", "image", "desc", 34.7, 100);
-//	}
-//
-//	@Bean
-//	public Product getProduct3() {
-//		return new Product(1, "stiklas", "image", "desc", 50.5, 100);
-//	}
+	@Bean
+	public Product getProduct1() {
+		return new Product(1L, "stalas", "image", "desc", 23.5, 100);
+	}
+
+	@Bean
+	public Product getProduct2() {
+		return new Product(2L, "lempa", "image", "desc", 34.7, 100);
+	}
+
+	@Bean
+	public Product getProduct3() {
+		return new Product(3L, "stiklas", "image", "desc", 50.5, 100);
+	}
 
 //	@Bean
 //	@Scope(value = "singleton")
