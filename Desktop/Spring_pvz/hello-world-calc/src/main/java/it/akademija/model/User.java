@@ -1,18 +1,34 @@
 package it.akademija.model;
 
-public final class User {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+public class User {
+
+	@Column
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	@Column
 	private String username;
+	@Column
 	private String firstName;
+	@Column
 	private String lastName;
+	@Column
 	private String email;
 
 	public User() {
 
 	}
 
-	public User(String username, String firstName, String lastName, String email) {
+	public User(Long id, String username, String firstName, String lastName, String email) {
 		super();
+		this.id = id;
 		this.username = username;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -20,8 +36,17 @@ public final class User {
 	}
 
 	// toliau - get ir set metodai
+
 	public String getUsername() {
 		return username;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public void setUsername(String username) {

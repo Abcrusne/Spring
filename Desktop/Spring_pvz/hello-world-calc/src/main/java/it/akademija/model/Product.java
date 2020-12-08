@@ -1,7 +1,11 @@
 package it.akademija.model;
 
-public final class Product {
+import nonapi.io.github.classgraph.json.Id;
 
+//@Entity
+public final class Product {
+	@Id
+	// @GeneratedValue(trategy = GenerationType.AUTO)
 	private Long id;
 	private String title;
 	private String image;

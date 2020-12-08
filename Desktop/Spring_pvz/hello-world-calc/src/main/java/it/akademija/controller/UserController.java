@@ -25,7 +25,44 @@ import it.akademija.model.User;
 @RequestMapping(value = "/api/users")
 public class UserController {
 
+//	private final UserService userService; // pridedame DAO
+//
+////	@Autowired
+////	private PagingData pagingData;
+//
+//	@Autowired
+//	public UserController(UserService userService) {
+//		this.userService = userService;
+//	}
+//
+//	/* Apdoros užklausas: GET /api/users */
+//	@RequestMapping(method = RequestMethod.GET)
+//	@ApiOperation(value = "Get users", notes = "Returns registered users")
+//	public List<User> getUsers() {
+//		return userService.getUsers(); // skaitome per DAO
+//	}
+//
+//	@RequestMapping(method = RequestMethod.POST)
+//	@ResponseStatus(HttpStatus.CREATED)
+//	@ApiOperation(value = "Create user", notes = "Creates users with data")
+//	public void createUser(
+//			@ApiParam(value = "User Data", required = true) @Valid @RequestBody final CreateUserCommand cmd) {
+//		User user = new User(cmd.getId(), cmd.getUsername(), cmd.getFirstName(), cmd.getLastName(), cmd.getEmail());
+//		userService.createUser(user);
+//		System.out.println("Created user with username: " + user.getUsername());
+//	}
+//
+//	/* Apdoros užklausas: DELETE /api/users/<vartotojas> */
+//	@RequestMapping(path = "/{username}", method = RequestMethod.DELETE)
+//	@ResponseStatus(HttpStatus.NO_CONTENT)
+//	public void deleteUser(@PathVariable final String username) {
+//		userService.deleteUser(username);
+//		System.out.println("Deleting user: " + username);
+//	}
 	private final UserDao userDao; // pridedame DAO
+
+//	@Autowired
+//	private PagingData pagingData;
 
 	@Autowired
 	public UserController(UserDao userDao) {
@@ -44,7 +81,7 @@ public class UserController {
 	@ApiOperation(value = "Create user", notes = "Creates users with data")
 	public void createUser(
 			@ApiParam(value = "User Data", required = true) @Valid @RequestBody final CreateUserCommand cmd) {
-		User user = new User(cmd.getUsername(), cmd.getFirstName(), cmd.getLastName(), cmd.getEmail());
+		User user = new User(cmd.getId(), cmd.getUsername(), cmd.getFirstName(), cmd.getLastName(), cmd.getEmail());
 		userDao.createUser(user);
 		System.out.println("Created user with username: " + user.getUsername());
 	}
@@ -56,5 +93,4 @@ public class UserController {
 		userDao.deleteUser(username);
 		System.out.println("Deleting user: " + username);
 	}
-
 }
